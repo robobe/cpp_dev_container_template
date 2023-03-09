@@ -1,18 +1,19 @@
 {
-    "build": {
-        "dockerfile": "Dockerfile",
-        "context": ".."
-    },
-    "remoteUser": "user",
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "ms-vscode.cpptools",
-                "ms-vscode.cmake-tools",
-                "vadimcn.vscode-lldb",
-                "cheshirekow.cmake-format",
-                "albert.tabout"
-            ]
-        }
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "user",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "vadimcn.vscode-lldb",
+        "cheshirekow.cmake-format",
+        "albert.tabout",
+        "matepek.vscode-catch2-test-adapter"
+      ]
     }
+  }
 }

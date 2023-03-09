@@ -17,13 +17,15 @@ RUN apt update && apt install -y --no-install-recommends \
     automake \
     lsb-release \
     wget \
-    software-properties-common 
+    software-properties-common \
+    libgtest-dev
 
 
-RUN apt update && \
-    apt install -y \
-    libzmq3-dev \
-    libboost-dev
+
+# RUN apt update && \
+#     apt install -y \
+#     libzmq3-dev \
+#     libboost-dev
 
 
 ARG USERNAME=user
@@ -39,20 +41,9 @@ RUN groupadd --gid $USER_GID $USERNAME \
   && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME\
   && chmod 0440 /etc/sudoers.d/$USERNAME \
   # Cleanup
-  && rm -rf /var/lib/apt/lists/* 
+  && rm -rf /var/lib/apt/lists/*
 
 USER $USERNAME
 WORKDIR /home/$USERNAME
 
-RUN mkdir -p ~/git \
-  && cd ~/git \
-  && git clone https://github.com/BehaviorTree/BehaviorTree.CPP \
-  && mkdir BehaviorTree.CPP/build \
-  && cd BehaviorTree.CPP/build \
-  && cmake .. \
-  && make
-
-USER root
-RUN cd /home/$USERNAME/git/BehaviorTree.CPP/build \
-  && make install
 

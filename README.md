@@ -1,3 +1,23 @@
+# Minmal CPP devcontainer with gtest
 
-## Reference
-- [ Behavior Trees in Robotics (Part 2 - C++ Implementation) ](https://youtu.be/4PUiDmD5dkg)
+!!! note "gtest"
+    installed by the docker file
+    ```
+    apt install libgtest-dev
+    ```
+
+## cpp tips
+- [lint](https://devblogs.microsoft.com/cppblog/visual-studio-code-c-december-2021-update-clang-tidy/)
+
+## vscode remote customize
+### extensions
+- [cpptools]()
+- [cmake-tools]()
+- [tabout]()
+- [vscode-catch2-test-adapter]()
+- [vscode-lldb]()
+- [cmake-format]()
+
+
+## todo
+- implement pre-commit hooks
